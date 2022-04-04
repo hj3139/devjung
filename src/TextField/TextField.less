@@ -1,0 +1,166 @@
+
+@import '../styles/index';
+@import '../styles/mixin/index';
+
+@focusColor: #5fa8d3;
+@defaultColor: #595f63;
+@labelColor: #a79c9c;
+@fullPercent: 100%;
+@positionAbsolute: absolute;
+@positionRelative: relative;
+
+.hj-TextField-primary-container { 
+  position: @positionRelative;
+  margin: 100px auto 0;
+
+  input { 
+    box-sizing: border-box; 
+    font-size: 1rem;
+    padding-top: 1.5rem;
+    width: @fullPercent; 
+    height: @fullPercent; 
+    border: 0 none; 
+    color: @primary-text-color; 
+    outline: none;
+  }
+
+  label { 
+    position: @positionAbsolute; 
+    left: 0%; 
+    bottom: 0; 
+    width: @fullPercent; 
+    height: @fullPercent; 
+    border-bottom: 1px solid #000; 
+    text-align: left; 
+    pointer-events: none; 
+    color: @labelColor;
+
+    span { 
+      position: @positionAbsolute; 
+      bottom: 5px; 
+      .transitionAll-second-ease(.3s)
+    }
+  }
+  input:focus + label span, 
+  input:valid + label span { 
+    transform: translateY(-150%); 
+    font-size: 14px; 
+    color: @primary-color;
+  }  
+
+  input:focus + label::after,
+  input:valid + label::after { 
+    width: @fullPercent; 
+    transform: translateX(0); 
+  }
+
+  label:after { 
+    content: ""; 
+    position: @positionAbsolute; 
+    left: 0; 
+    bottom: -1px; 
+    width: 0; 
+    height: 100%; 
+    border-bottom: 3px solid @primary-color; 
+    .transitionAll-second-ease(.3s)
+  } 
+} 
+ 
+.hj-TextField-outline-container { 
+  position: @positionRelative;
+  margin: 100px auto 0;
+
+  input { 
+    box-sizing: border-box; 
+    padding: 0 10px; 
+    padding-top: 1.5rem;
+    border: none;
+    width: @fullPercent; 
+    height: @fullPercent; 
+    color: @primary-text-color; 
+    outline: none;
+  }
+
+  label { 
+    position: @positionAbsolute; 
+    z-index: 10000000;
+    left: 0; 
+    bottom: 0; 
+    width: @fullPercent; 
+    height: @fullPercent; 
+    border: 1px solid #000; 
+    text-align: left; 
+    pointer-events: none; 
+    color: @labelColor;
+
+    span { 
+      position: @positionAbsolute; 
+      left: 10px; 
+      bottom: 5px; 
+      z-index: 10000;
+      .transitionAll-second-ease(.3s);
+    }
+  }
+
+  input:focus + label span, 
+  input:valid + label span { 
+  
+    transform: translateY(-165%); 
+    font-size: 14px; 
+    color: @primary-color;  
+  
+  
+  }  
+
+  input:focus + label::after,
+  input:valid + label::after { 
+    width: @fullPercent; 
+    transform: translateX(0); 
+  }
+
+  label:after { 
+    content: ""; 
+    position: @positionAbsolute; 
+    left: 0; 
+
+    width: 0; 
+    height: 100%; 
+    border: 1px solid @primary-color;
+    .transitionAll-second-ease(.3s)
+  } 
+} 
+
+
+.hj-TextField-fill-container { 
+  position: @positionRelative;
+  margin: 100px auto 0;
+
+  input { 
+    box-sizing: border-box; 
+    padding: 0 10px; 
+    padding-top: 1.5rem;
+    width: @fullPercent; 
+    height: @fullPercent;  
+    color: @defaultColor; 
+    outline: none;
+  }
+
+  label { 
+    position: @positionAbsolute; 
+    left: 0%; 
+    bottom: 0; 
+    width: @fullPercent; 
+    height: @fullPercent; 
+    border-bottom: 1px solid #000; 
+    text-align: left; 
+    pointer-events: none; 
+    color: @labelColor;
+
+    span { 
+      position: @positionAbsolute; 
+      left: 10px; 
+      bottom: 5px; 
+      .transitionAll-second-ease(.3s)
+    }
+  }
+}
